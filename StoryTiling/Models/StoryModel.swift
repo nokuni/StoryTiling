@@ -11,3 +11,7 @@ struct Story {
     var name: String
     var tiles: [Tile]
 }
+
+extension Story {
+    static let byDefault = Story(name: "Default", tiles: [Tile.byDefault, Tile.byDefault, Tile.byDefault, Tile.byDefault])
+}

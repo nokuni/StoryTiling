@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Tile {
+struct Tile: Hashable {
     var name: String
     var image: String
     var category: TileCategory

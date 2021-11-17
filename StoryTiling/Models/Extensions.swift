@@ -5,7 +5,7 @@
 //  Created by Maertens Yann-Christophe on 17/11/21.
 //
 
-import Foundation
+import SwiftUI
 
 extension Bundle {
     func decode<T: Decodable>(_ resource: String) -> [T] {
@@ -16,4 +16,8 @@ extension Bundle {
         }
         return []
     }
+}
+
+extension Color {
+    static let veryLightBlue = Color(red: 235/255, green: 243/255, blue: 250/255)
 }

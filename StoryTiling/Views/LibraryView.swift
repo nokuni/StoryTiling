@@ -13,12 +13,42 @@ struct LibraryView: View {
         NavigationView {
             GeometryReader { geometry in
                 VStack(alignment: .leading) {
-                    LibraryRowView(title: "My Stories", width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-                    LibraryRowView(title: "Well-Known Stories", width: geometry.size.width * 0.25, height: geometry.size.width * 0.25)
-                    LibraryRowView(title: "Favorites Stories", width: geometry.size.width * 0.25, height: geometry.size.width * 0.25)
+                    Text("My Stories")
+                        .fontWeight(.semibold)
+                        .font(.title3)
+                    ZStack {
+                        Color.veryLightBlue.cornerRadius(10)
+                            .shadow(radius: 5)
+                        VStack {
+                            Text("Looks like you need some help...")
+                                .fontWeight(.bold)
+                            Image("typewriter")
+                                .resizable()
+                                .scaledToFit()
+                        }
+                        .padding(10)
+                    }
+                    Text("Favorites Stories")
+                        .fontWeight(.semibold)
+                        .font(.title3)
+                    Image("favorite")
+                        .resizable()
+                        .scaledToFit()
+                        .shadow(radius: 5)
+                    Text("Well-Known Stories")
+                        .fontWeight(.semibold)
+                        .font(.title3)
+                    ScrollView(.horizontal) {
+                        HStack {
+                            Color.gray.cornerRadius(10)
+                                .frame(width: geometry.size.width * 0.4)
+                            Color.gray.cornerRadius(10)
+                                .frame(width: geometry.size.width * 0.4)
+                        }
+                    }
                 }
             }
-            .padding(.leading)
+            .padding()
             .navigationTitle("Library")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
