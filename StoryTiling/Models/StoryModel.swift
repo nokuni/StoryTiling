@@ -10,6 +10,7 @@ import Foundation
 struct Story {
     var name: String
     var tiles: [Tile]
+    var isFavorite: Bool = false
 }
 
 extension Story {

@@ -18,6 +18,10 @@
 		96BC322C2744F82800B45899 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC322B2744F82800B45899 /* ViewModel.swift */; };
 		96BC322E2744FA4F00B45899 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC322D2744FA4F00B45899 /* LibraryView.swift */; };
 		96BC32302744FB2C00B45899 /* LibraryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC322F2744FB2C00B45899 /* LibraryRowView.swift */; };
+		96BC3236274544E300B45899 /* MyStoriesPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC3235274544E300B45899 /* MyStoriesPlaceholderView.swift */; };
+		96BC32382745451A00B45899 /* LibraryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC32372745451900B45899 /* LibraryTitleView.swift */; };
+		96BC323A274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC3239274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift */; };
+		96BC323D2745461700B45899 /* NewStoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC323C2745461700B45899 /* NewStoryButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		96BC322B2744F82800B45899 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		96BC322D2744FA4F00B45899 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		96BC322F2744FB2C00B45899 /* LibraryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRowView.swift; sourceTree = "<group>"; };
+		96BC3235274544E300B45899 /* MyStoriesPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoriesPlaceholderView.swift; sourceTree = "<group>"; };
+		96BC32372745451900B45899 /* LibraryTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTitleView.swift; sourceTree = "<group>"; };
+		96BC3239274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStoriesPlaceholderView.swift; sourceTree = "<group>"; };
+		96BC323C2745461700B45899 /* NewStoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoryButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +95,7 @@
 		96BC32202744F66F00B45899 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				96BC322D2744FA4F00B45899 /* LibraryView.swift */,
-				96BC322F2744FB2C00B45899 /* LibraryRowView.swift */,
+				96BC323B274545F600B45899 /* Library */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +117,19 @@
 				96BC32292744F7C000B45899 /* Extensions.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		96BC323B274545F600B45899 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				96BC322D2744FA4F00B45899 /* LibraryView.swift */,
+				96BC32372745451900B45899 /* LibraryTitleView.swift */,
+				96BC322F2744FB2C00B45899 /* LibraryRowView.swift */,
+				96BC3239274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift */,
+				96BC3235274544E300B45899 /* MyStoriesPlaceholderView.swift */,
+				96BC323C2745461700B45899 /* NewStoryButtonView.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +202,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96BC3236274544E300B45899 /* MyStoriesPlaceholderView.swift in Sources */,
 				96BC32242744F71B00B45899 /* StoryModel.swift in Sources */,
 				96BC322A2744F7C000B45899 /* Extensions.swift in Sources */,
 				96BC32282744F77400B45899 /* TileCategory.swift in Sources */,
 				96BC32262744F73F00B45899 /* TileModel.swift in Sources */,
+				96BC32382745451A00B45899 /* LibraryTitleView.swift in Sources */,
+				96BC323A274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift in Sources */,
 				96BC322E2744FA4F00B45899 /* LibraryView.swift in Sources */,
+				96BC323D2745461700B45899 /* NewStoryButtonView.swift in Sources */,
 				96BC32152744F51A00B45899 /* ContentView.swift in Sources */,
 				96BC32132744F51A00B45899 /* StoryTilingApp.swift in Sources */,
 				96BC322C2744F82800B45899 /* ViewModel.swift in Sources */,
