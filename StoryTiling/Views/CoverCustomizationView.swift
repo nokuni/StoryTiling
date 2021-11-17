@@ -8,21 +8,28 @@
 import SwiftUI
 
 struct CoverCustomizationView: View {
+    
+    @State var coverImg = "defaultCover"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationTitle("New Story")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar() {
-                ToolbarItem(placement: .navigationBarLeading)
-                {
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "chevron.left")
-                        Text("Back")
-                    })
-                }
+        VStack {
+            Text("Customize your Story Tile")
+                .font(.title)
+                .multilineTextAlignment(.leading)
+                .navigationTitle("New Story")
+                .navigationBarTitleDisplayMode(.inline)
+            Image(coverImg)
+            HStack {
+                //gallery button
+                //illustrations button
+                //capture button
             }
+            .padding()
+            
+            //insert text field
+            //done button
+        }
+        .padding()
     }
 }
 
