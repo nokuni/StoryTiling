@@ -17,20 +17,18 @@ struct GuidingQuestionsView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(.green)
-                    .frame(width: 100, height: 100, alignment: .center)
+                        .frame(width: 100, height: 100, alignment: .center)
                     Image(systemName: tile.image)
                         .foregroundColor(.yellow)
                         .font(.title)
                         .padding()
                 }
-                List {
-                    ForEach(tile.questions, id: \.self) {question in
-                        NavigationLink(destination:DetailQuestionView(question: question, image: tile.image)) {
-                            Text(question)
-                                .font(.title)
-                                .bold()
-                                .padding()
-                        }
+                List(tile.questions, id: \.self) {question in
+                    NavigationLink(destination:DetailQuestionView(question: question, image: tile.image)) {
+                        Text(question)
+                            .font(.title)
+                            .bold()
+                            .padding()
                     }
                 }
             }
