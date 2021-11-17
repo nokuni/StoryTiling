@@ -14,3 +14,7 @@ struct Tile {
     var description: String
     var questions: [String]
 }
+
+extension Tile  {
+    static let byDefault = Tile(name: "Default", image: "heart.fill", category: .incipit, description: "description", questions: [])
+}
