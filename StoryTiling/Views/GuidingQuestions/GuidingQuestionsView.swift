@@ -24,7 +24,7 @@ struct GuidingQuestionsView: View {
                         .padding()
                 }
                 List(tile.questions, id: \.self) {question in
-                    NavigationLink(destination:DetailQuestionView(question: question, image: tile.image)) {
+                    NavigationLink(destination: DetailQuestionView(question: question, image: tile.image)) {
                         Text(question)
                             .font(.title)
                             .bold()
@@ -32,7 +32,7 @@ struct GuidingQuestionsView: View {
                     }
                 }
             }
-            .navigationTitle("Guiding questions")
+            .navigationBarTitle("Incipit", displayMode: .inline)
         }
     }
 }

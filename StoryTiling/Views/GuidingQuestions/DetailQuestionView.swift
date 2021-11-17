@@ -13,29 +13,32 @@ struct DetailQuestionView: View {
     var image: String
     
     var body: some View {
-        VStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.green)
-                    .frame(width: 100, height: 100, alignment: .center)
-                Image(systemName: image)
-                    .foregroundColor(.yellow)
-                    .font(.title)
-                    .padding()
-            }
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.gray)
-                    .padding()
-                
-                VStack {
-                    Text(question)
+        NavigationView {
+            VStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.green)
+                        .frame(width: 100, height: 100, alignment: .center)
+                    Image(systemName: image)
+                        .foregroundColor(.yellow)
                         .font(.title)
-                        .bold()
                         .padding()
-                    Spacer()
+                }
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.gray)
+                        .padding()
+                    
+                    VStack {
+                        Text(question)
+                            .font(.title2)
+                            .bold()
+                            .padding()
+                        Spacer()
+                    }
                 }
             }
+            .navigationBarTitle("Question", displayMode: .inline)
         }
     }
 }
