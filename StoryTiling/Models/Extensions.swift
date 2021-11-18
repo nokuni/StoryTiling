@@ -21,3 +21,11 @@ extension Bundle {
 extension Color {
     static let veryLightBlue = Color(red: 235/255, green: 243/255, blue: 250/255)
 }
+
+extension Array {
+    func separate(into size: Int) -> [[Element]] {
+        stride(from: 0, to: count, by: size).map {
+            Array(self[$0 ..< Swift.min($0 + size, count)])
+        }
+    }
+}

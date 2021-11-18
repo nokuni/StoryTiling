@@ -7,14 +7,13 @@
 
 import Foundation
 
-struct Tile: Hashable {
+struct Tile: Hashable, Decodable {
     var name: String
     var image: String
     var category: TileCategory
     var description: String
-    var questions: [String]
 }
 
 extension Tile  {
-    static let byDefault = Tile(name: "Default", image: "heart.fill", category: .incipit, description: "description", questions: [])
+    static let byDefault = Tile(name: "Default", image: "spider", category: .incipit, description: "description")
 }

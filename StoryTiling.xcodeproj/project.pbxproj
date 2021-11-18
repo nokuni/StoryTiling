@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960CE9E42745771A002132CF /* WellKnownStories.json in Resources */ = {isa = PBXBuildFile; fileRef = 960CE9E32745771A002132CF /* WellKnownStories.json */; };
 		96BC32132744F51A00B45899 /* StoryTilingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC32122744F51A00B45899 /* StoryTilingApp.swift */; };
 		96BC32152744F51A00B45899 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC32142744F51A00B45899 /* ContentView.swift */; };
 		96BC32172744F51C00B45899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BC32162744F51C00B45899 /* Assets.xcassets */; };
@@ -22,9 +23,11 @@
 		96BC32382745451A00B45899 /* LibraryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC32372745451900B45899 /* LibraryTitleView.swift */; };
 		96BC323A274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC3239274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift */; };
 		96BC323D2745461700B45899 /* NewStoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC323C2745461700B45899 /* NewStoryButtonView.swift */; };
+		96BC323F27454CEC00B45899 /* MinimizedStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC323E27454CEC00B45899 /* MinimizedStoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		960CE9E32745771A002132CF /* WellKnownStories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WellKnownStories.json; sourceTree = "<group>"; };
 		96BC320F2744F51A00B45899 /* StoryTiling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryTiling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BC32122744F51A00B45899 /* StoryTilingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTilingApp.swift; sourceTree = "<group>"; };
 		96BC32142744F51A00B45899 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +44,7 @@
 		96BC32372745451900B45899 /* LibraryTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTitleView.swift; sourceTree = "<group>"; };
 		96BC3239274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStoriesPlaceholderView.swift; sourceTree = "<group>"; };
 		96BC323C2745461700B45899 /* NewStoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoryButtonView.swift; sourceTree = "<group>"; };
+		96BC323E27454CEC00B45899 /* MinimizedStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimizedStoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		960CE9E227457700002132CF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				960CE9E32745771A002132CF /* WellKnownStories.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		96BC32062744F51A00B45899 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +123,7 @@
 		96BC32222744F70F00B45899 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				960CE9E227457700002132CF /* Data */,
 				96BC32232744F71B00B45899 /* StoryModel.swift */,
 				96BC32252744F73F00B45899 /* TileModel.swift */,
 				96BC32272744F77400B45899 /* TileCategory.swift */,
@@ -128,6 +141,7 @@
 				96BC3239274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift */,
 				96BC3235274544E300B45899 /* MyStoriesPlaceholderView.swift */,
 				96BC323C2745461700B45899 /* NewStoryButtonView.swift */,
+				96BC323E27454CEC00B45899 /* MinimizedStoryView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -191,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96BC321A2744F51C00B45899 /* Preview Assets.xcassets in Resources */,
+				960CE9E42745771A002132CF /* WellKnownStories.json in Resources */,
 				96BC32172744F51C00B45899 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +228,7 @@
 				96BC323D2745461700B45899 /* NewStoryButtonView.swift in Sources */,
 				96BC32152744F51A00B45899 /* ContentView.swift in Sources */,
 				96BC32132744F51A00B45899 /* StoryTilingApp.swift in Sources */,
+				96BC323F27454CEC00B45899 /* MinimizedStoryView.swift in Sources */,
 				96BC322C2744F82800B45899 /* ViewModel.swift in Sources */,
 				96BC32302744FB2C00B45899 /* LibraryRowView.swift in Sources */,
 			);

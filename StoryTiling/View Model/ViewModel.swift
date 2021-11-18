@@ -15,5 +15,7 @@ class StoryViewModel: ObservableObject {
         return userStories.filter { $0.isFavorite }
     }
     
-    init() { }
+    init() {
+        userStories.append(Story.byDefault)
+    }
 }
