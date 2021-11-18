@@ -13,33 +13,35 @@ struct DetailQuestionView: View {
     var image: String
     
     var body: some View {
-        NavigationView {
-            VStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.green)
-                        .frame(width: 100, height: 100, alignment: .center)
-                    Image(systemName: image)
-                        .foregroundColor(.yellow)
-                        .font(.title)
-                        .padding()
-                }
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.gray)
-                        .padding()
-                    
+        VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.green)
+                    .frame(width: 100, height: 100, alignment: .center)
+                Image(systemName: image)
+                    .foregroundColor(.yellow)
+                    .font(.title)
+                    .padding()
+            }
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(Color(UIColor.systemGray5))
+                .padding()
+                .overlay(
                     VStack {
-                        Text(question)
-                            .font(.title2)
-                            .bold()
+                        HStack {
+                            Text(question)
+                                .font(.title2)
+                                .bold()
+                                .multilineTextAlignment(.leading)
                             .padding()
+                            Spacer()
+                        }
                         Spacer()
                     }
-                }
-            }
-            .navigationBarTitle("Question", displayMode: .inline)
+                        .padding()
+                )
         }
+        .navigationBarTitle("Question", displayMode: .inline)
     }
 }
 

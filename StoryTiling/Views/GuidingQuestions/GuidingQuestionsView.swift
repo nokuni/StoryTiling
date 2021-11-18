@@ -31,8 +31,9 @@ struct GuidingQuestionsView: View {
                             .padding()
                     }
                 }
+                .listStyle(.plain)
             }
-            .navigationBarTitle("Incipit", displayMode: .inline)
+            .navigationBarTitle("Incipit")
         }
     }
 }
