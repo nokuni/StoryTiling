@@ -1,0 +1,64 @@
+[
+    {
+        "name": "Lord of the Rings",
+        "presentationImage": "wizard",
+        "tiles": [
+            {
+                "name": "Company",
+                "image": "wizard",
+                "category": "incipit",
+                "description": "A group of diverse fairy people lives under the menace of a greater evil."
+            },
+            {
+                "name": "Ring",
+                "image": "wizard",
+                "category": "adventure",
+                "description": "One day, they found a magic ring which is a powerful talisman of the villain."
+            },
+            {
+                "name": "Quest",
+                "image": "wizard",
+                "category": "conflict",
+                "description": "Then, they travel the entire continent grouping people."
+            },
+            {
+                "name": "Sauron",
+                "image": "wizard",
+                "category": "resolution",
+                "description": "So they defeat the greater evil by destroying its source of power."
+            },
+        ],
+        "isFavorite": false
+    },
+    {
+        "name": "Spider-Man",
+        "presentationImage": "spider",
+        "tiles": [
+            {
+                "name": "Orphan",
+                "image": "spider",
+                "category": "incipit",
+                "description": "An orphan kid lives alone with their relatives."
+            },
+            {
+                "name": "Spider",
+                "image": "spider",
+                "category": "adventure",
+                "description": "One day, he gets bitten by a radioactive spider."
+            },
+            {
+                "name": "Superhero",
+                "image": "spider",
+                "category": "conflict",
+                "description": "Then, they use their superpowers for a greater good."
+            },
+            {
+                "name": "Responsability",
+                "image": "spider",
+                "category": "resolution",
+                "description": "So they learn to be responsible and to protect their loved ones."
+            },
+        ],
+        "isFavorite": false
+    }
+]

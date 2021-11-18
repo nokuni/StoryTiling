@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct Story {
+struct Story: Equatable, Decodable {
     var name: String
+    var presentationImage: String
     var tiles: [Tile]
     var isFavorite: Bool = false
 }
 
 extension Story {
-    static let byDefault = Story(name: "Default", tiles: [Tile.byDefault, Tile.byDefault, Tile.byDefault, Tile.byDefault])
+    static let byDefault = Story(name: "Default", presentationImage: "", tiles: [Tile.byDefault, Tile.byDefault, Tile.byDefault, Tile.byDefault])
+    static var wellknown: [Story] {
+        Bundle.main.decode("WellKnownStories")
+    }
 }

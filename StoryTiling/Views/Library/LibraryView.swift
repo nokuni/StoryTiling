@@ -38,7 +38,7 @@ struct LibraryView: View {
                     LibraryTitleView(title: "Well-Known Stories")
                     
                     // Collection of well known stories
-                    LibraryRowView(stories: [], width: geometry.size.width)
+                    LibraryRowView(stories: Story.wellknown, width: geometry.size.width)
                 }
             }
             .padding()
