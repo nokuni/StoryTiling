@@ -23,7 +23,6 @@ struct MinimizedStoryView: View {
                     .resizable()
                     .scaledToFit()
                     .scaleEffect(0.9)
-                    .frame(width: width * 0.16 * 2, height: width * 0.16 * 2)
             } else {
                 ForEach(tiles.indices, id: \.self) { row in
                     HStack {
@@ -32,7 +31,6 @@ struct MinimizedStoryView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .scaleEffect(0.8)
-                                .frame(width: width * 0.16, height: width * 0.16)
                                 .background(Color.blue.cornerRadius(10))
                         }
                     }
