@@ -127,7 +127,6 @@
 		96BC32222744F70F00B45899 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				960CE9E227457700002132CF /* Data */,
 				96BC32232744F71B00B45899 /* StoryModel.swift */,
 				96BC32252744F73F00B45899 /* TileModel.swift */,
 				96BC32272744F77400B45899 /* TileCategory.swift */,
@@ -209,7 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96BC321A2744F51C00B45899 /* Preview Assets.xcassets in Resources */,
-				960CE9E42745771A002132CF /* WellKnownStories.json in Resources */,
 				96BC32172744F51C00B45899 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

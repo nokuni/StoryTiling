@@ -14,32 +14,48 @@ struct GuidingQuestionsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.green)
-                        .frame(width: 100, height: 100, alignment: .center)
-                    Image(systemName: tile.image)
-                        .foregroundColor(.yellow)
-                        .font(.title)
-                        .padding()
+                HStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.green)
+                        Image(tile.image)
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                    }
+                    .frame(width: 150, height: 150, alignment: .leading)
+                    
+                    VStack(alignment: .leading) {
+                        Text(tile.name)
+                            .font(.title2)
+                            .bold()
+                        Divider()
+                        Text(tile.description)
+                            .font(.title3)
+                    }
                 }
+                .padding()
+                
                 List(tile.category.questions, id: \.self) {question in
-                    NavigationLink(destination: DetailQuestionView(question: question, image: tile.image)) {
+                    NavigationLink(destination: DetailQuestionView(question: question, name: tile.name, description: tile.description, image: tile.image)) {
                         Text(question)
                             .font(.title)
-                            .bold()
                             .padding()
                     }
                 }
                 .listStyle(.plain)
             }
-            .navigationBarTitle("Incipit")
+            .navigationBarTitle("\(tile.category.rawValue.capitalized)")
         }
     }
 }
 
 struct GuidingQuestions_Previews: PreviewProvider {
     static var previews: some View {
-        GuidingQuestionsView(tile: .init(name: "Scientist", image: "lightbulb.fill", category: .incipit, description: "Test"))
+        GuidingQuestionsView(tile: .init(name: "Scientist", image: "scientist", category: .incipit, description: """
+            An unexperienced detective is set to solve their first case.
+            """
+            )
+        )
     }
 }
