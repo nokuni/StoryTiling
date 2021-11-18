@@ -23,7 +23,7 @@ struct GuidingQuestionsView: View {
                         .font(.title)
                         .padding()
                 }
-                List(tile.questions, id: \.self) {question in
+                List(tile.category.questions, id: \.self) {question in
                     NavigationLink(destination: DetailQuestionView(question: question, image: tile.image)) {
                         Text(question)
                             .font(.title)
@@ -40,6 +40,6 @@ struct GuidingQuestionsView: View {
 
 struct GuidingQuestions_Previews: PreviewProvider {
     static var previews: some View {
-        GuidingQuestionsView(tile: .init(name: "Scientist", image: "lightbulb.fill", category: .incipit, description: "Test", questions: ["Which are the character’s main motivations?","What is the ordinary world, before the adventure begins?", "Are there any allies and/or a mentor?"]))
+        GuidingQuestionsView(tile: .init(name: "Scientist", image: "lightbulb.fill", category: .incipit, description: "Test"))
     }
 }
