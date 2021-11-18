@@ -9,12 +9,13 @@ import Foundation
 import SwiftUI
 
 struct GuidingQuestionsView: View {
+    @State var replies: [String] = []
     var tile: Tile
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
+            VStack(spacing: 20) {
+                HStack(alignment: .top, spacing: 20) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(.green)
@@ -37,7 +38,7 @@ struct GuidingQuestionsView: View {
                 .padding()
                 
                 List(tile.category.questions, id: \.self) {question in
-                    NavigationLink(destination: DetailQuestionView(question: question, name: tile.name, description: tile.description, image: tile.image)) {
+                    NavigationLink(destination: DetailQuestionView(question: question, name: tile.name, description: tile.description)) {
                         Text(question)
                             .font(.title)
                             .padding()
