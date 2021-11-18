@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum TileCategory: String {
+enum TileCategory: String, CaseIterable{
     case incipit, adventure, conflict, resolution
 }

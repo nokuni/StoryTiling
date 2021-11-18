@@ -18,6 +18,7 @@
 		96BC322C2744F82800B45899 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC322B2744F82800B45899 /* ViewModel.swift */; };
 		96BC322E2744FA4F00B45899 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC322D2744FA4F00B45899 /* LibraryView.swift */; };
 		96BC32302744FB2C00B45899 /* LibraryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC322F2744FB2C00B45899 /* LibraryRowView.swift */; };
+		D245BA3B274511E500C7177F /* StoryOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245BA3A274511E500C7177F /* StoryOverviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		96BC322B2744F82800B45899 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		96BC322D2744FA4F00B45899 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		96BC322F2744FB2C00B45899 /* LibraryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRowView.swift; sourceTree = "<group>"; };
+		D245BA3A274511E500C7177F /* StoryOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOverviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				96BC322D2744FA4F00B45899 /* LibraryView.swift */,
 				96BC322F2744FB2C00B45899 /* LibraryRowView.swift */,
+				D245BA3A274511E500C7177F /* StoryOverviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				96BC322E2744FA4F00B45899 /* LibraryView.swift in Sources */,
 				96BC32152744F51A00B45899 /* ContentView.swift in Sources */,
 				96BC32132744F51A00B45899 /* StoryTilingApp.swift in Sources */,
+				D245BA3B274511E500C7177F /* StoryOverviewView.swift in Sources */,
 				96BC322C2744F82800B45899 /* ViewModel.swift in Sources */,
 				96BC32302744FB2C00B45899 /* LibraryRowView.swift in Sources */,
 			);
