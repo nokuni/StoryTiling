@@ -7,296 +7,155 @@
 import SwiftUI
 
 
-
 struct StoryOverviewView: View {
+    
+    let currentStory: Story
+    
+    @State var storyTitle = Story.byDefault.name
+    @State var tempName: String = ""
+    @State var isModifying = false
+    @State private var showingActionSheet = false
     
     
     
     var body: some View {
-    
         
-    
-        
+        GeometryReader { geometry in
             
-            GeometryReader { geometry in
+            VStack {
                 
-                VStack{
-                    
+                if isModifying {
+                    TextField("Name your story", text: $tempName)
+                        .onSubmit(){
+                            if tempName != ("") {
+                                storyTitle = tempName
+                                // Here it should change the real title
+                                // of the real story in the database
+                                tempName = ""
+                                isModifying.toggle()
+                            } else {
+                                isModifying.toggle()
+                            }
+                        }
+                } else {
                     HStack{
-                        Text("New Story")
-                            .font(.largeTitle)
+                        Text("\(storyTitle)")
+                            .font(.title2)
                             .fontWeight(.bold)
                         Button(action: {
-                            
+                            isModifying.toggle()
                         }, label: {
                             Image(systemName: "pencil")
-                                .font(.title)
+                                .font(.title3)
                                 .foregroundColor(.customSystemBlue)
                             
                         })
                         Spacer()
                     }
-                    .padding(.top)
-                    .padding(.bottom)
-                    .padding(.bottom)
-                    
-                    
-                   
-                                                      
-                    /*
-                     
-                     List(tile.category, id: \.self) { category in
-                         NavigationLink(destination: Text("test")){
-                             Text(question)
-                                 .font(.title)
-                                 .bold()
-                         }
-                     }
-                     
-                     
-                     */
-                    
-                    
-                    
-                    List{
-                        
-                        HStack{
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 17)
-                                    .frame(width: geometry.size.width * 0.245, height: geometry.size.width * 0.245)
-                                    .foregroundColor(.customGreen)
-                                Image("detective")
-                                    .resizable()
-                                    .frame(width: 80, height: 80)
-                                    .scaledToFit()
-                            }
-                            
-                            VStack{
-                                HStack{
-                                    Text("Incipit")
-                                        .font(.title)
-                                        .fontWeight(.semibold)
-                                    Spacer()
-                                    Button(action: {
-                                        
-                                    }, label: {
-                                        Image(systemName: "chevron.forward")
+                }
+                
+                List(currentStory.tiles, id: \.self) { tile in
+                    Section {
+                        NavigationLink(destination: Text("test")){
+                            HStack{
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 17)
+                                        .frame(width: geometry.size.width * 0.245, height: geometry.size.width * 0.245)
+                                        .foregroundColor(.customGreen)
+                                    Image(tile.image)
+                                        .resizable()
+                                        .frame(width: geometry.size.width * 0.245 * 0.8, height: geometry.size.width * 0.245 * 0.8)
+                                        .scaledToFit()
+                                }
+                                
+                                VStack{
+                                    HStack{
+                                        Text("\(tile.category.rawValue.capitalized)")
                                             .font(.title)
-                                        
-                                    })
+                                            .fontWeight(.semibold)
+                                        Spacer()
+                                    }
                                     
+                                    HStack{
+                                        Text(tile.name)
+                                            .font(.title2)
+                                            .foregroundColor(.gray)
+                                        Spacer()
+                                    }
+                                    HStack{
+                                        Text(tile.description)
+                                            .font(.body)
+                                        Spacer()
+                                    }
                                     
                                 }
-                                HStack{
-                                    Text("Detective")
-                                        .font(.title2)
-                                        .foregroundColor(.gray)
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("An unexperienced detective is set to solve their first case.")
-                                        .font(.body)
-                                    Spacer()
-                                }
+                                
                             }
-                            
+                            .padding(.top)
+                            .padding(.bottom)
                         }
-                        .listRowSeparator(.hidden, edges: .all)
-                        .listRowInsets(EdgeInsets())
                         .background(Color.customGray)
-                        
-                        
-                        
-                        
-                        HStack{
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 17)
-                                    .frame(width: geometry.size.width * 0.245, height: geometry.size.width * 0.245)
-                                    .foregroundColor(.customBlue)
-                                Image("mushroom")
-                                    .resizable()
-                                    .frame(width: 80, height: 80)
-                                    .scaledToFit()
-                            }
-                            VStack{
-                                HStack{
-                                    Text("Adventure")
-                                        .font(.title)
-                                        .fontWeight(.semibold)
-                                    Spacer()
-                                    Button(action: {
-                                        
-                                    }, label: {
-                                        Image(systemName: "chevron.forward")
-                                            .font(.title)
-                                    })
-                                    
-                                }
-                                HStack{
-                                    Text("Mushroom")
-                                        .font(.title2)
-                                        .foregroundColor(.gray)
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("One day, they found a giant mushroom in the forest.")
-                                        .font(.body)
-                                    Spacer()
-                                }
-                            }
-                        }
-                        .listRowSeparator(.hidden, edges: .all)
-                        .padding(.top)
-                        .padding(.top)
-                        .listRowInsets(EdgeInsets())
-                        .background(Color.customGray)
-                        
-                        HStack{
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 17)
-                                    .frame(width: geometry.size.width * 0.245, height: geometry.size.width * 0.245)
-                                    .foregroundColor(.customRed)
-                                Image("explosion")
-                                    .resizable()
-                                    .frame(width: 80, height: 80)
-                                    .scaledToFit()
-                            }
-                            VStack{
-                                HStack{
-                                    Text("Conflict")
-                                        .font(.title)
-                                        .fontWeight(.semibold)
-                                    Spacer()
-                                    Button(action: {
-                                        
-                                    }, label: {
-                                        Image(systemName: "chevron.forward")
-                                            .font(.title)
-                                    })
-                                    
-                                }
-                                HStack{
-                                    Text("Explosion")
-                                        .font(.title2)
-                                        .foregroundColor(.gray)
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("Then, they wipe out the entire enemy base.")
-                                        .font(.body)
-                                    Spacer()
-                                }
-                            }
-                        }
-                        .listRowSeparator(.hidden, edges: .all)
-                        .padding(.top)
-                        .padding(.top)
-                        .listRowInsets(EdgeInsets())
-                        .background(Color.customGray)
-                        
-                        
-                        
-                        HStack{
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 17)
-                                    .frame(width: geometry.size.width * 0.245, height: geometry.size.width * 0.245)
-                                    .foregroundColor(.customPurple)
-                                Image("peace")
-                                    .resizable()
-                                    .frame(width: 80, height: 80)
-                                    .scaledToFit()
-                            }
-                            VStack{
-                                HStack{
-                                    Text("Resolution")
-                                        .font(.title)
-                                        .fontWeight(.semibold)
-                                    Spacer()
-                                    Button(action: {
-                                        
-                                    }, label: {
-                                        Image(systemName: "chevron.forward")
-                                            .font(.title)
-                                    })
-                                    
-                                }
-                                HStack{
-                                    Text("Peace")
-                                        .font(.title2)
-                                        .foregroundColor(.gray)
-                                    Spacer()
-                                }
-                                HStack{
-                                    Text("So war is over and peace is restored.")
-                                        .font(.body)
-                                    Spacer()
-                                }
-                            }
-                            
-                        }
-                        .listRowSeparator(.hidden, edges: .all)
-                        .padding(.top)
-                        .padding(.top)
-                        .listRowInsets(EdgeInsets())
-                        .background(Color.customGray)
-                        
-                        
                     }
-                    .listStyle(.plain)
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden, edges: .top)
+                }
+                .listStyle(.plain)
+                
+                Button(action: {
                     
+                }, label: {
+                    Text("Next")
+                        .padding()
+                        .frame(maxWidth: .infinity, maxHeight: geometry.size.height * 0.03)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.customSystemBlue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                })
+                    .padding(.bottom)
+                    .padding(.bottom)
                     
+            }
+            .padding()
+            .background(Color.customGray)
+            .navigationTitle("Overview")
+            
+            .toolbar {
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        
+                        showingActionSheet = true
                     }, label: {
-                        Text("Next")
-                            .padding()
-                            .frame(maxWidth: .infinity, maxHeight: geometry.size.height * 0.03)
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color.customSystemBlue)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                    })
-                        .padding(.bottom)
-                        .padding(.bottom)
-                    
-                    
-                }
-                .padding()
-                .background(Color.customGray)
-                .navigationTitle("Overview")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(systemName: "chevron.left")
-                            Text("Library")
-                        })
+                        Text("Edit")
                             .foregroundColor(.customSystemBlue)
-                        
-                    }
-                    
-                    /*ToolbarItem(placement: .navigationBarTrailing) {
-                     Button(action: {
-                     print("Refresh")
-                     }) {
-                     Label("Refresh", systemImage: "arrow.clockwise")
-                     }
-                     }*/
+                            .actionSheet(isPresented: $showingActionSheet) {
+                                ActionSheet(title: Text("Choose an option"), buttons: [
+                                    .destructive(Text("Delete Story")) {
+                                        
+                                    },
+                                    .default(Text("Save to Favorites")) {
+                                        
+                                    },
+                                    .cancel()
+                                ])
+                            }
+                    })
                 }
-                //.edgesIgnoringSafeArea(.bottom)
+                
             }
         }
     }
+}
 
 
 struct StoryOverviewView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            StoryOverviewView()
+            //StoryOverviewView()
+            
+            StoryOverviewView(currentStory: .init(name: Story.byDefault.name, presentationImage: "", tiles: Story.byDefault.tiles))
             
         }
+
     }
 }
