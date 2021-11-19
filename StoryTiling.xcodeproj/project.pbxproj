@@ -24,6 +24,7 @@
 		96BC323A274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC3239274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift */; };
 		96BC323D2745461700B45899 /* NewStoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC323C2745461700B45899 /* NewStoryButtonView.swift */; };
 		96BC323F27454CEC00B45899 /* MinimizedStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC323E27454CEC00B45899 /* MinimizedStoryView.swift */; };
+		D20C35382747A10D0097ED0F /* StoryOverViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20C35372747A10D0097ED0F /* StoryOverViewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		96BC3239274545CB00B45899 /* FavoriteStoriesPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStoriesPlaceholderView.swift; sourceTree = "<group>"; };
 		96BC323C2745461700B45899 /* NewStoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoryButtonView.swift; sourceTree = "<group>"; };
 		96BC323E27454CEC00B45899 /* MinimizedStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimizedStoryView.swift; sourceTree = "<group>"; };
+		D20C35372747A10D0097ED0F /* StoryOverViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOverViewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				96BC323B274545F600B45899 /* Library */,
+				D20C35372747A10D0097ED0F /* StoryOverViewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				96BC323D2745461700B45899 /* NewStoryButtonView.swift in Sources */,
 				96BC32152744F51A00B45899 /* ContentView.swift in Sources */,
 				96BC32132744F51A00B45899 /* StoryTilingApp.swift in Sources */,
+				D20C35382747A10D0097ED0F /* StoryOverViewView.swift in Sources */,
 				96BC323F27454CEC00B45899 /* MinimizedStoryView.swift in Sources */,
 				96BC322C2744F82800B45899 /* ViewModel.swift in Sources */,
 				96BC32302744FB2C00B45899 /* LibraryRowView.swift in Sources */,
