@@ -7,10 +7,20 @@
 
 import Foundation
 import SwiftUI
+import UIKit
+
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
 
 struct DetailQuestionView: View {
-    @State var reply: String = "Type here..."
-//    @Binding var replies: [String]
+//    @Binding private var replies: [String]
+    @State private var reply: String
+    @State private var tapped: Bool = false
+    @State private var textColor: Color = Color.secondary
+    let placeholder = "Type here..."
     var question: String
     var name: String
     var description: String
@@ -19,6 +29,7 @@ struct DetailQuestionView: View {
         self.question = question
         self.name = name
         self.description = description
+        self.reply = placeholder
         
         UITextView.appearance().backgroundColor = UIColor.systemGray5
     }
@@ -32,33 +43,42 @@ struct DetailQuestionView: View {
                 Spacer()
             }
             .padding()
-
-//            RoundedRectangle(cornerRadius: 10)
-//                .foregroundColor(Color(UIColor.systemGray5))
-//                .padding()
-//                .overlay(
-//                    VStack(alignment: .leading) {
-                        TextEditor(text: $reply)
-                            .foregroundColor(.secondary)
-                            .font(.title)
-                            .multilineTextAlignment(.leading)
-                            .cornerRadius(10)
-                            .padding()
-                            .onTapGesture {
-                                if (reply == "Type here...") {
-                                    reply = ""
-                                }
-                            }
-//                        Spacer()
-//                    }
-//                    .padding()
-//                )
+            .onTapGesture {
+                tapped.toggle()
+                hideKeyboard()
+                if (reply.isEmpty) {
+                    reply = placeholder
+                    textColor = Color.secondary
+                }
+            }
+            TextEditor(text: $reply)
+                .foregroundColor(textColor)
+                .font(.title)
+                .multilineTextAlignment(.leading)
+                .cornerRadius(10)
+                .padding()
+                .onTapGesture {
+                    if (!tapped) {
+                        tapped.toggle()
+                        if (reply == "Type here...") {
+                            reply = ""
+                            textColor = Color.primary
+                        }
+                    }
+                }
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink("Dismiss"){
-                    Text("Saved")
+                if (tapped) {
+                    Button("Done") {
+                        tapped.toggle()
+                        hideKeyboard()
+                        if (reply.isEmpty) {
+                            textColor = Color.secondary
+                            reply = placeholder
+                        }
+                    }
                 }
             }
         }

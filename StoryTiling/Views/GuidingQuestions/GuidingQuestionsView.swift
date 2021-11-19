@@ -9,8 +9,13 @@ import Foundation
 import SwiftUI
 
 struct GuidingQuestionsView: View {
-    @State var replies: [String] = []
     var tile: Tile
+//    @State private var replies: [String] = []
+    
+//    init(tile: Tile) {
+//        self.tile = tile
+//        replies = tile.category.questions
+//    }
     
     var body: some View {
         NavigationView {

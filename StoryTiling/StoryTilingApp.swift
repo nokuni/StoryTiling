@@ -11,7 +11,11 @@ import SwiftUI
 struct StoryTilingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GuidingQuestionsView(tile: .init(name: "Scientist", image: "scientist", category: .incipit, description: """
+                An unexperienced detective is set to solve their first case.
+                """
+                )
+            )
         }
     }
 }
